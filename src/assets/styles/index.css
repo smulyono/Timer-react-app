@@ -1,10 +1,12 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Georgia, 'Times New Roman', Times, serif
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color : #222;
+  min-height:450px;
 }
 
-header, footer{
+header{
     width:100%;
 }
 
@@ -18,13 +20,7 @@ header {
     justify-content: center;
 }
 
-footer {
-    height:50px;
-    position:fixed;
-    bottom:0;
-    background-color: #efefef;
-    font-size:12px;
-}
+
 
 #root {
     margin-bottom:10px;
