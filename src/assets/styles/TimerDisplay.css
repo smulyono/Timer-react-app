@@ -9,11 +9,20 @@
 }
 
 .timerdisplay-watch {
-    width : 300px;
+    width : 400px;
     height: 300px;
-    border-radius : 100%;
-    border : solid 2px white;
     background-color :black;
+
+    display:flex;
+    align-content: center;
+    justify-content : center;
+    align-items: center;
+    color : #fff;
+    font-size:2.5em;
+}
+
+.timerdisplay-watch.warning {
+    color : #f90;
 }
 
 @media screen and (max-height:450px) {
@@ -21,7 +30,7 @@
         min-height:200px;
     }
     .timerdisplay-watch {
-        width : 180px;
+        width : 380px;
         height: 180px;
     }
 }

@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import 'assets/styles/TimerDisplay.css';
 
 class TimerDisplay extends Component {
-    contructor(){
-
-    }
     render() {
+        const {
+            clockDisplay,
+            isPassThreshold=false
+        } = this.props;
+
         return(
             <div className='timerdisplay-container'>
-                <div className='timerdisplay-watch'>
+                <div className={'timerdisplay-watch '+ (isPassThreshold ? "warning" : "")}>
+                    {clockDisplay}
                 </div>
             </div>
         )

@@ -22,9 +22,6 @@ footer button {
     margin : 8px;
     box-sizing: border-box;
     
-    border-width: 1px;
-    border-style: dashed;
-    border-color : transparent;
 }
 
 footer button.active {
@@ -34,5 +31,7 @@ footer button.active {
 }
 
 footer button.active:hover {
-    border-color : white;
+    cursor : pointer;
+    box-shadow : inset 1px 1px 2px #fff,
+                 inset -1px -1px 2px #fff;
 }
