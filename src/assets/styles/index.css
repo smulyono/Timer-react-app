@@ -1,9 +1,12 @@
+* {
+    box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
   font-family: Georgia, 'Times New Roman', Times, serif;
   background-color : #222;
-  min-height:450px;
+  min-height:200px;
 }
 
 header{
