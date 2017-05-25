@@ -12,15 +12,13 @@ class App extends Component {
         this.onClockTimer = this.onClockTimer.bind(this);
         this.startClockTimer = this.startClockTimer.bind(this);
         this.stopClockTimer = this.stopClockTimer.bind(this);
+        this.resetClockTimer = this.resetClockTimer.bind(this);
 
         this.timerCounter = undefined;
         
         this.state = {
-            currentProcess : 'stop',
-            starttime: 10,
-            displaytime: 10,
-            progress: 100,
-            isPassThreshold : false
+            currentProcess : 'reset',
+            displaytime: 3544
         };
     }
 
@@ -28,9 +26,7 @@ class App extends Component {
         return (
             <div className="App">
                 <TimerDisplay 
-                    progress={this.state.progress}
                     clockDisplay={this.state.displaytime}
-                    isPassThreshold={this.state.isPassThreshold}
                     />
                 <BottomControl
                     currentProcess={this.state.currentProcess}
@@ -41,12 +37,10 @@ class App extends Component {
     }
 
     activeChangeEvent(buttonState){
-        var currentTime = this.state.displaytime;
+        var currentProcess = this.state.currentProcess;
+        
         switch (buttonState.toLowerCase()) {
             case 'start' : 
-                if (currentTime <= 0) {
-                    currentTime = this.state.starttime;
-                }
                 this.startClockTimer();
             break;
 
@@ -54,16 +48,18 @@ class App extends Component {
                 this.stopClockTimer();
             break;
 
+            case 'reset' : 
+                this.resetClockTimer();
+            break;
             default : 
                 this.stopClockTimer();
             break;
         }
-        this.setState(
-            {
-                currentProcess : buttonState,
-                displaytime : currentTime
-            }
-        );
+        currentProcess = buttonState.toLowerCase();
+
+        this.setState({
+            currentProcess : currentProcess
+        })
     }
 
     startClockTimer() {
@@ -76,31 +72,29 @@ class App extends Component {
         }
     }
 
+    resetClockTimer() {
+        this.stopClockTimer();
+        this.setState(
+            {
+                displaytime : 0
+            }
+        );
+    }
+
     onClockTimer() {
         var currentTime = this.state.displaytime;
         var buttonState = this.state.currentProcess;
-        var isThreshold = false;
-        currentTime--;
-        if (currentTime === 0) {
-            // time to stop
-            isThreshold = false;
-            buttonState = 'Stop';
-        } else if (currentTime <= 5) {
-            isThreshold = true;
-        }
+
+        currentTime++;
 
         this.stopClockTimer();
-        if (buttonState !== "Stop") {
+        if (buttonState.toLowerCase !== "stop") {
             this.startClockTimer();
         }
 
-        this.setState(
-            {
-                currentProcess: buttonState,
-                displaytime : currentTime,
-                isPassThreshold: isThreshold
-            }
-        );
+        this.setState( {
+            displaytime : currentTime
+        })
     }
 
 }

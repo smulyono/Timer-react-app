@@ -31,10 +31,13 @@ class BottomControl extends Component {
             isactive: true
         }
 
-        if (currentProcess === "Start") {
+        if (currentProcess.toLowerCase() === "start") {
             rightButton.caption = 'Stop';
-            leftButton.isactive = false;
-        } else if (currentProcess === "Stop") {
+            leftButton.isactive = true;
+        } else if (currentProcess.toLowerCase() === "stop") {
+            rightButton.caption = 'Start';
+            leftButton.isactive = true;
+        } else if (currentProcess.toLowerCase() === "reset") {
             rightButton.caption = 'Start';
             leftButton.isactive = false;
         }

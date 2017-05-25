@@ -8,7 +8,7 @@
 }
 
 .timerdisplay-watch {
-    width : 60px;
+    width : 50px;
     height: 100px;
 
     display:flex;
@@ -16,12 +16,14 @@
     align-content: center;
     justify-content : center;
     align-items: center;
-    color : #fff;
+    color : beige;
     font-size:2.5em;
 }
 
 .timerdisplay-watch .label {
-    font-size: 0.5em;
+    font-size: 0.4em;
+    margin-top : 7px;
+    color : burlywood;
 }
 
 .timerdisplay-watch.warning {
