@@ -18,7 +18,7 @@ class App extends Component {
         
         this.state = {
             currentProcess : 'reset',
-            displaytime: 3544
+            displaytime: 0
         };
     }
 
