@@ -1,9 +1,11 @@
 {
   "name": "timer",
   "version": "0.1.0",
+  "homepage": "https://smulyono.github.io/timer-react-app",
   "private": true,
   "devDependencies": {
-    "react-scripts": "~1.0.6"
+    "react-scripts": "~1.0.6",
+    "gh-pages": "^1.0.0"
   },
   "dependencies": {
     "react": "^15.5.4",
@@ -13,6 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build"
   }
 }
